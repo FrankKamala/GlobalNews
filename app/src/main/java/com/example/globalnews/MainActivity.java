@@ -24,9 +24,9 @@ public class MainActivity extends AppCompatActivity {
         mSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String title = mTitle.getText().toString();
+                String titLe = mTitle.getText().toString();
                 Intent intent = new Intent(MainActivity.this, News.class);
-                intent.putExtra("Title",title);
+                intent.putExtra("Title",titLe);
 
                 startActivity(intent);
 

@@ -16,4 +16,17 @@ public class NewsAdapter extends ArrayAdapter {
 
 
     }
+
+
+    @Override
+    public Object getItem(int position) {
+        String titles = mTitle[position];
+        String contents = mContent[position];
+        return String.format("%s \nDescription: %s", titles, contents);
+    }
+
+    @Override
+    public int getCount() {
+        return mTitle.length;
+    }
 }
