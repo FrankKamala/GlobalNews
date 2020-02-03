@@ -8,14 +8,17 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="159dp"
-        android:layout_height="31dp"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
         android:layout_marginStart="68dp"
         android:layout_marginTop="104dp"
-        android:text="This is News By "
+        android:textSize="17sp"
+        android:textColor="#de0023"
+        android:text="News By "
          />
 
     <ListView
+        android:layout_marginTop="17dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/listView"

@@ -64,6 +64,6 @@ public class News extends AppCompatActivity {
 
         Intent intent = getIntent();
         String titLe = intent.getStringExtra("Title");
-        mOutput.setText("This articles were posted By:"+titLe+".");
+        mOutput.setText("News By: "+titLe+".");
     }
 }
