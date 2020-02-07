@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<NewsSearchResponse> call, Response<NewsSearchResponse> response) {
 
 
-                if (response.isSuccessful()) {
+                if (response.isSuccessful() && response.body().getArticles() != null) {
                     articles = response.body().getArticles();
                    mAdapter = new Adapter(articles,MainActivity.this);
                     mRecyclerView.setAdapter(mAdapter);

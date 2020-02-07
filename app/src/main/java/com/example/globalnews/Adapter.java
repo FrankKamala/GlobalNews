@@ -53,9 +53,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MHolder> {
         return articles.size();
     }
 
-    public interface OnItemClickListener{
-        void onItemClickListener (View view, int position);
-    }
+
 
     public class MHolder extends RecyclerView.ViewHolder {
 //        TextView title,description,author,published,source,time;
