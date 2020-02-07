@@ -12,6 +12,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 import butterknife.BindView;
@@ -67,6 +69,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MHolder> {
         @BindView(R.id.source)TextView mSource;
         @BindView(R.id.time)TextView mtime;
         @BindView(R.id.img)ImageView mPicha;
+
        // @BindView(R.id.progres) ProgressBar mprogress;
 
         private Context context;
@@ -79,12 +82,14 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MHolder> {
 
 
         public void bindArticle(Article article) {
+            Picasso.get().load(article.getUrlToImage()).into(mPicha);
             mTitle.setText(article.getTitle());
             mDesc.setText(article.getDescription());
             mAuthor.setText(article.getAuthor());
             mPublish.setText(article.getPublishedAt());
             mSource.setText(article.getSource().getName());
             mtime.setText(article.getPublishedAt());
+
 
 
         }

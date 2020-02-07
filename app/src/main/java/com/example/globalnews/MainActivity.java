@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 //    @BindView(R.id.search) Button mSearch;
     @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
     @BindView(R.id.errorTextView) TextView mErrorTextView;
+   // @BindView(R.id.img) ImageView mPicha;
     private Adapter mAdapter;
 
     public List<Article> articles;
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
 
         Intent intent = getIntent();
         String country = intent.getStringExtra("us");
