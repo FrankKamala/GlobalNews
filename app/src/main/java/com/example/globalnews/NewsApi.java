@@ -5,11 +5,13 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public interface NewsApi {
+    String Apikey = Constants.API_KEY;
     @GET("top-headlines")
     Call<NewsSearchResponse>getNews(
-            @Query("country") String country,
-            @Query("apiKey") String apiKey
-    );
+            @Query("apiKey") String apiKey,
+                        @Query("country") String country
+
+            );
 
 
 }

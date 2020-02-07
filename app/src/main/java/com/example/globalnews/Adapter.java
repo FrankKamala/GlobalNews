@@ -14,10 +14,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class Adapter extends RecyclerView.Adapter<Adapter.MHolder> {
     private List <Article> articles;
     private Context context ;
-    private OnItemClickListener onItemClickListener;
+//    private OnItemClickListener onItemClickListener;
 
 
     public Adapter(List<Article> articles, Context context) {
@@ -25,57 +28,66 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MHolder> {
         this.context = context;
     }
 
-    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
-
-        this.onItemClickListener = onItemClickListener;
-    }
 
     @NonNull
     @Override
     public MHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.items,parent,false);
-        return new MHolder(view,onItemClickListener);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.items, parent, false);
+        MHolder viewHolder = new MHolder(view);
+        return viewHolder;
+
+
     }
 
     @Override
     public void onBindViewHolder(@NonNull MHolder holder, int position) {
+        holder.bindArticle(articles.get(position));
+
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return articles.size();
     }
 
     public interface OnItemClickListener{
         void onItemClickListener (View view, int position);
     }
 
-    public class MHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        TextView title,description,author,published,source,time;
-        ImageView imageView;
-        ProgressBar progressBar;
-        OnItemClickListener onItemClickListener;
-        public MHolder(@NonNull View itemView, OnItemClickListener onItemClickListener) {
+    public class MHolder extends RecyclerView.ViewHolder {
+//        TextView title,description,author,published,source,time;
+//        ImageView imageView;
+//        ProgressBar progressBar;
+        //OnItemClickListener onItemClickListener;
+        @BindView(R.id.title) TextView mTitle;
+        @BindView(R.id.desc)TextView mDesc;
+        @BindView(R.id.author)TextView mAuthor;
+        @BindView(R.id.publishedAt)TextView mPublish;
+        @BindView(R.id.source)TextView mSource;
+        @BindView(R.id.time)TextView mtime;
+       // @BindView(R.id.img)ImageView mPicha;
+       // @BindView(R.id.progres) ProgressBar mprogress;
+
+        private Context context;
+
+        public MHolder(View itemView) {
             super(itemView);
-            itemView.setOnClickListener(this);
-            title = itemView.findViewById(R.id.title);
-            description =itemView.findViewById(R.id.desc);
-            author = itemView.findViewById(R.id.author);
-            published = itemView.findViewById(R.id.publishedAt);
-            source = itemView.findViewById(R.id.source);
-            time = itemView.findViewById(R.id.time);
-            imageView = itemView.findViewById(R.id.img);
-            progressBar = itemView.findViewById(R.id.progres);
-
-            this.onItemClickListener =onItemClickListener;
+            ButterKnife.bind(this, itemView);
+            context = itemView.getContext();
         }
 
-        @Override
-        public void onClick(View v) {
-           // onItemClickListener.onItemClick(v,getAdapterPosition());
+
+        public void bindArticle(Article article) {
+            mTitle.setText(article.getTitle());
+            mDesc.setText(article.getDescription());
+            mAuthor.setText(article.getAuthor());
+            mPublish.setText(article.getPublishedAt());
+            mSource.setText(article.getSource().getName());
+            mtime.setText(article.getPublishedAt());
 
         }
+
     }
 
 }
