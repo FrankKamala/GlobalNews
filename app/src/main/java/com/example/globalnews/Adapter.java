@@ -66,7 +66,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MHolder> {
         @BindView(R.id.publishedAt)TextView mPublish;
         @BindView(R.id.source)TextView mSource;
         @BindView(R.id.time)TextView mtime;
-       // @BindView(R.id.img)ImageView mPicha;
+        @BindView(R.id.img)ImageView mPicha;
        // @BindView(R.id.progres) ProgressBar mprogress;
 
         private Context context;
@@ -85,6 +85,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MHolder> {
             mPublish.setText(article.getPublishedAt());
             mSource.setText(article.getSource().getName());
             mtime.setText(article.getPublishedAt());
+
 
         }
 
