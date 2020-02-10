@@ -20,8 +20,8 @@
                 android:layout_height="wrap_content"
                 android:text="TOP HEADLINES"
                 android:layout_gravity="center"
-                android:textStyle="bold"
-                android:fontFamily="@font"
+
+                android:fontFamily="@font/headlinetext"
                 android:textColor="#FF0000"
                 android:textSize="30sp"
                 android:layout_marginLeft="16dp"
