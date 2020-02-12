@@ -1,4 +1,6 @@
-package com.example.globalnews;
+package com.example.globalnews.model;
+
+import com.example.globalnews.BuildConfig;
 
 public class Constants {
 

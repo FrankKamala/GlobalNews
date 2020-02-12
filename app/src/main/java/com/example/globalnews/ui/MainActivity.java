@@ -1,4 +1,4 @@
-package com.example.globalnews;
+package com.example.globalnews.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -8,10 +8,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.globalnews.adapters.Adapter;
+import com.example.globalnews.model.Article;
+import com.example.globalnews.model.Constants;
+import com.example.globalnews.model.NewsSearchResponse;
+import com.example.globalnews.R;
+import com.example.globalnews.network.NewsApi;
+import com.example.globalnews.network.NewsClient;
 
 import java.util.List;
 

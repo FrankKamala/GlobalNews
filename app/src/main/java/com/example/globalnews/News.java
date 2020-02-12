@@ -10,6 +10,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.globalnews.adapters.NewsAdapter;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 

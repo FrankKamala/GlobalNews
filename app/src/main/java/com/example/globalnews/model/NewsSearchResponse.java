@@ -1,5 +1,5 @@
 
-package com.example.globalnews;
+package com.example.globalnews.model;
 
 import java.io.Serializable;
 import java.util.List;

@@ -1,4 +1,7 @@
-package com.example.globalnews;
+package com.example.globalnews.network;
+
+import com.example.globalnews.model.Constants;
+import com.example.globalnews.model.NewsSearchResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

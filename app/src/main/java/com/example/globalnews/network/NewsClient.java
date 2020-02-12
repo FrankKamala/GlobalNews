@@ -1,4 +1,4 @@
-package com.example.globalnews;
+package com.example.globalnews.network;
 
 import java.io.IOException;
 
@@ -9,8 +9,8 @@ import okhttp3.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static com.example.globalnews.Constants.API_KEY;
-import static com.example.globalnews.Constants.NEWS_BASE_URL;
+import static com.example.globalnews.model.Constants.API_KEY;
+import static com.example.globalnews.model.Constants.NEWS_BASE_URL;
 
 public class NewsClient {
     private static Retrofit retrofit = null;

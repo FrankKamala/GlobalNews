@@ -1,10 +1,12 @@
-package com.example.globalnews;
+package com.example.globalnews.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.example.globalnews.R;
 
 public class Splash extends AppCompatActivity {
 

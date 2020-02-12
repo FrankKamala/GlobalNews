@@ -1,4 +1,4 @@
-package com.example.globalnews;
+package com.example.globalnews.adapters;
 
 import android.content.Context;
 import android.widget.ArrayAdapter;
