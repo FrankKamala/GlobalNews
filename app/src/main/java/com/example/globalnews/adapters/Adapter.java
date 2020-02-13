@@ -57,7 +57,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MHolder> {
 
     public class MHolder extends RecyclerView.ViewHolder {
 //        TextView title,description,author,published,source,time;
-//        ImageView imageView;
+//        ImageView imageView;.idea
 //        ProgressBar progressBar;
         //OnItemClickListener onItemClickListener;
         @BindView(R.id.title) TextView mTitle;
