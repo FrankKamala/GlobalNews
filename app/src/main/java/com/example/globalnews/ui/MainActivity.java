@@ -98,30 +98,33 @@ public class MainActivity extends AppCompatActivity {
     private void showArticles() {
         mRecyclerView.setVisibility(View.VISIBLE);
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu){
-
-        MenuInflater inflater =getMenuInflater();
-        inflater.inflate(R.menu.menu_mine,menu);
-        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        final SearchView searchView = (SearchView) menu.findItem(R.id.find).getActionView();
-        MenuItem searchMenuItem = menu.findItem(R.id.find);
-        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-        searchView.setQueryHint("Search for");
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                return false;
-            }
-        });
-
-        return onCreateOptionsMenu(menu);
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu){
+//
+//        MenuInflater inflater =getMenuInflater();
+//        inflater.inflate(R.menu.menu_mine,menu);
+//        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+//        final SearchView searchView = (SearchView) menu.findItem(R.id.find).getActionView();
+//        MenuItem searchMenuItem = menu.findItem(R.id.find);
+//        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+//        searchView.setQueryHint("Search for");
+//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//            @Override
+//            public boolean onQueryTextSubmit(String query) {
+//
+//
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean onQueryTextChange(String newText) {
+//                //Log.e("onQueryTextChange", "called");
+//                return false;
+//            }
+//        });
+//
+//        return onCreateOptionsMenu(menu);
+//    }
 
 
 }
