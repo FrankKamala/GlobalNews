@@ -20,5 +20,18 @@
         android:textSize="16sp"
         android:textColorHint="@color/myWhite"
         android:inputType="textEmailAddress" />
+    <EditText
+        android:id="@+id/key"
+        android:background="@drawable/rounded_edittext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:hint="Password"
+        android:textColorHint="@color/myWhite"
+        android:ems="10"
+        android:inputType="textPassword"
+        />
 
 </LinearLayout>
