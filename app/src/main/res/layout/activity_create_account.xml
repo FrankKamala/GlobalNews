@@ -6,5 +6,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ui.CreateAccount">
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="150dp"
+        android:id="@+id/email_signup"
+        android:background="@drawable/rounded_edittext"
+        android:layout_gravity="center"
+
+        android:gravity="center"
+        android:hint="Email"
+        android:ems="10"
+        android:textSize="16sp"
+        android:textColorHint="@color/myWhite"
+        android:inputType="textEmailAddress" />
 
 </LinearLayout>
