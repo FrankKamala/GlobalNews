@@ -16,15 +16,21 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Login extends AppCompatActivity implements View.OnClickListener {
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
-    EditText ed1,ed2; //Edit text input
+public class Login extends AppCompatActivity implements View.OnClickListener {
+    @BindView(R.id.username) EditText mEd1;
+    @BindView(R.id.password) EditText mEd2;
+
+
 
     FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        ButterKnife.bind(this);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -51,30 +57,30 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void userLogin() {
-        String email = ed1.getText().toString().trim();
-        String password = ed2.getText().toString().trim();
+        String email = mEd1.getText().toString().trim();
+        String password = mEd2.getText().toString().trim();
         if (email.isEmpty()) {
-            ed1.setError("Email is required"); //mail validation
-            ed1.requestFocus();
+            mEd1.setError("Email is required"); //mail validation
+            mEd1.requestFocus();
             return;
         }
 
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            ed1.setError("Please enter a valid email");
-            ed1.requestFocus();
+            mEd1.setError("Please enter a valid email");
+            mEd1.requestFocus();
             return;
         }
 
         if (password.isEmpty()) {
-            ed2.setError("Password is required"); //password validation
-            ed2.requestFocus();
+            mEd2.setError("Password is required"); //password validation
+            mEd2.requestFocus();
             return;
         }
 
 
         if (password.length() < 6) {
-            ed2.setError("Minimum length of password should be 6"); //password length
-            ed2.requestFocus();
+            mEd2.setError("Minimum length of password should be 6"); //password length
+            mEd2.requestFocus();
             return;
         }
 
@@ -88,7 +94,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 if(task.isSuccessful()){
                     finish();
                     Intent intent=new Intent(Login.this,MainActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                   // intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }else{
                     Toast.makeText(getApplicationContext(),task.getException().getMessage(),Toast.LENGTH_SHORT).show();
