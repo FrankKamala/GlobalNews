@@ -13,7 +13,7 @@
         android:layout_marginTop="50dp"
         android:text="Global News"
         android:textColor="#000000"
-        android:textSize="30sp"
+        android:textSize="35sp"
         android:id="@+id/title"
         android:padding="10dp"
 
