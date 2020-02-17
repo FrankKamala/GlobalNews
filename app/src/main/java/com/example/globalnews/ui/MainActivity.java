@@ -131,5 +131,11 @@ public class MainActivity extends AppCompatActivity {
 //    }
 
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater =getMenuInflater();
+       inflater.inflate(R.menu.log_out,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 }
 
