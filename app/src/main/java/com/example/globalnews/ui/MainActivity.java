@@ -1,6 +1,8 @@
 package com.example.globalnews.ui;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,6 +26,7 @@ import com.example.globalnews.model.NewsSearchResponse;
 import com.example.globalnews.R;
 import com.example.globalnews.network.NewsApi;
 import com.example.globalnews.network.NewsClient;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.List;
 
@@ -38,7 +41,8 @@ public class MainActivity extends AppCompatActivity {
 //    @BindView(R.id.search) Button mSearch;
     @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
     @BindView(R.id.errorTextView) TextView mErrorTextView;
-    @BindView(R.id.tool) Toolbar mToolbar;
+    @BindView(R.id.tool)
+    Toolbar mToolbar;
    // @BindView(R.id.img) ImageView mPicha;
     private Adapter mAdapter;
 
@@ -50,8 +54,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        Toolbar toolbar = mToolbar;
-        setSupportActionBar(toolbar);
+
 
 
         Intent intent = getIntent();
@@ -136,6 +139,20 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater inflater =getMenuInflater();
        inflater.inflate(R.menu.log_out,menu);
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.signOut:
+                FirebaseAuth.getInstance().signOut();
+                finish();
+                startActivity(new Intent(this,Login.class));
+
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
 
