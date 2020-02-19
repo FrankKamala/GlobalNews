@@ -1,18 +1,23 @@
 package com.example.globalnews.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.globalnews.model.Article;
 import com.example.globalnews.R;
+import com.example.globalnews.model.Article;
+import com.example.globalnews.ui.DetailActivity;
 import com.squareup.picasso.Picasso;
+
+import org.parceler.Parcels;
 
 import java.util.List;
 
@@ -22,6 +27,9 @@ import butterknife.ButterKnife;
 public class Adapter extends RecyclerView.Adapter<Adapter.MHolder> {
     private List <Article> articles;
     private Context context ;
+
+
+
 //    private OnItemClickListener onItemClickListener;
 
 
@@ -55,7 +63,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MHolder> {
 
 
 
-    public class MHolder extends RecyclerView.ViewHolder {
+    public class MHolder extends RecyclerView.ViewHolder  implements View.OnClickListener{
 //        TextView title,description,author,published,source,time;
 //        ImageView imageView;.idea
 //        ProgressBar progressBar;
@@ -75,6 +83,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MHolder> {
         public MHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+            itemView.setOnClickListener(this);
             context = itemView.getContext();
         }
 
@@ -92,6 +101,16 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MHolder> {
 
         }
 
+        @Override
+        public void onClick(View v) {
+            int itemPos = getLayoutPosition();
+            Intent intent = new Intent(context, DetailActivity.class);
+            intent.putExtra("position",itemPos);
+            intent.putExtra("article", Parcels.wrap(articles));
+            context.startActivity(intent);
+
+
+        }
     }
 
 }

@@ -4,6 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
+import androidx.core.util.Pair;
+import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -36,17 +39,18 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
     //    @BindView(R.id.edOne) EditText mTitle;
 //    @BindView(R.id.search) Button mSearch;
     @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
+
     @BindView(R.id.errorTextView) TextView mErrorTextView;
-    @BindView(R.id.tool)
-    Toolbar mToolbar;
+    @BindView(R.id.tool) Toolbar mToolbar;
    // @BindView(R.id.img) ImageView mPicha;
     private Adapter mAdapter;
 
     public List<Article> articles;
+
 
 
     @Override
@@ -91,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
 
         });
     }
+
 
     private void showFailureMessage() {
         mErrorTextView.setText("Something went wrong. Please check your Internet connection and try again later");
@@ -154,5 +159,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 }
 
