@@ -24,6 +24,7 @@ public class DetailActivity extends AppCompatActivity {
 
 //    @BindView(R.id.date) TextView date;
     @BindView(R.id.time) TextView time;
+    @BindView(R.id.descrip) TextView mDescription;
 
     @BindView(R.id.author) TextView author;
     @BindView(R.id.title) TextView mTitle;
@@ -53,6 +54,7 @@ public class DetailActivity extends AppCompatActivity {
         time.setText(mNews.get(itemPos).getPublishedAt());
         author.setText(mNews.get(itemPos).getAuthor());
         mTitle.setText(mNews.get(itemPos).getTitle());
+        mDescription.setText(mNews.get(itemPos).getDescription());
 
 
 
