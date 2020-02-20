@@ -95,9 +95,11 @@
             <androidx.cardview.widget.CardView
 
                 android:layout_width="match_parent"
-                app:cardCornerRadius="0dp"
+                app:cardCornerRadius="8dp"
                 app:cardElevation="@dimen/cardview_default_elevation"
+
                 android:layout_height="wrap_content">
+
                 <RelativeLayout
                     android:layout_marginBottom="20dp"
                     android:layout_marginTop="20dp"
@@ -128,31 +130,47 @@
                         android:ellipsize="end"
                         android:text="a time ago" />
                     <TextView
+                        android:layout_marginTop="24dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/author"
                         android:layout_below="@id/title"/>
 
+                    <TextView
+                        android:layout_below="@+id/author"
+                        android:id="@+id/descrip"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#000000"
+                        android:maxLines="12"
+                        android:inputType="textMultiLine"
+                        />
+
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
 
-                android:layout_marginTop="12dp"
-                android:layout_marginBottom="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardElevation="@dimen/cardview_default_elevation"
-                app:cardCornerRadius="0dp">
 
                 <RelativeLayout
+
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-                    <TextView
-                        android:id="@+id/descrip"
+
+                    <ImageView
+                        android:layout_marginTop="24dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/newsImage"
+                        />
+                    <Button
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textMultiLine"/>
+                        android:text="Save This"
+                        android:id="@+id/saveNews"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/colorAccent"
+                        android:textColor="@color/myWhite"
+                        android:textSize="15sp" />
 
 
 
@@ -165,44 +183,16 @@
 
                 </RelativeLayout>
 
-            </androidx.cardview.widget.CardView>
+
+
 
         </LinearLayout>
 
+
     </ScrollView>
 
-    <FrameLayout
-        android:id="@+id/date_behavior"
 
 
-        android:adjustViewBounds="true"
-        app:layout_anchorGravity="right|end|bottom"
-        android:clickable="false"
-        android:layout_below="@id/img"
-
-        android:layout_width="wrap_content"
-        android:padding="5dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="410dp"
-        android:layout_height="wrap_content"
-        tools:ignore="UnusedAttribute">
-        <ImageView
-
-            android:layout_width="18dp"
-            android:layout_height="18dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"/>
-        <TextView
-            android:textColor="#606060"
-            android:id="@+id/date"
-            android:layout_marginLeft="27dp"
-            android:layout_marginRight="10dp"
-            android:text="01 January 1990"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </FrameLayout>
 
 
 </FrameLayout>
