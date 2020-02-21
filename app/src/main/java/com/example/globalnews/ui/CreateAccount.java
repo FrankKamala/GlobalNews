@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -19,6 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class CreateAccount extends AppCompatActivity implements View.OnClickListener {
     EditText mail,pass;
+    Animation button_animate;
 
 
     private FirebaseAuth mAuth;
@@ -27,6 +30,7 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
+        button_animate = AnimationUtils.loadAnimation(this, R.anim.btn_anim);
 
         mail = (EditText) findViewById(R.id.email_signup);
         pass = (EditText) findViewById(R.id.key);
@@ -81,6 +85,7 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.buttonSignUp:
+                view.setAnimation(button_animate);
                 registerUser();
                 break;
 
