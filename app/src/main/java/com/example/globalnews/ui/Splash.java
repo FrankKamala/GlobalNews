@@ -24,6 +24,8 @@ public class Splash extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         topAnim = AnimationUtils.loadAnimation(this, R.anim.up_anim);
+        image = findViewById(R.id.img);
+        image.setAnimation(topAnim);
 
 
         Handler handler =new Handler();
