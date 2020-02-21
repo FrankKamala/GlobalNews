@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -20,6 +22,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
+    Animation button_animate;
+
     @BindView(R.id.username) EditText mEd1;
     @BindView(R.id.password) EditText mEd2;
 
@@ -30,6 +34,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        button_animate = AnimationUtils.loadAnimation(this, R.anim.btn_anim);
+
         ButterKnife.bind(this);
 
         mAuth = FirebaseAuth.getInstance();
@@ -46,11 +52,14 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.create:
+
                 finish();
+
                 startActivity(new Intent(this, CreateAccount.class));  //switch between activity
                 break;
 
             case R.id.button:
+                v.setAnimation(button_animate);
                 userLogin();
                 break;
         }
