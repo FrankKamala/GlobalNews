@@ -15,7 +15,7 @@
     <EditText
         android:layout_width="250dp"
         android:layout_height="40dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="20dp"
         android:id="@+id/username"
         android:background="@drawable/rounded_edittext"
         android:layout_gravity="center"
@@ -58,7 +58,7 @@
         android:id="@+id/create"
         android:background="@drawable/rounded_edittext"
         android:textColor="@color/myWhite"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:layout_gravity="center"
         android:gravity="center"
         android:layout_width="140dp"
