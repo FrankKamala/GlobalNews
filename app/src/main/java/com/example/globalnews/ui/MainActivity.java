@@ -21,6 +21,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.globalnews.adapters.Adapter;
 import com.example.globalnews.model.Article;
@@ -29,7 +30,9 @@ import com.example.globalnews.model.NewsSearchResponse;
 import com.example.globalnews.R;
 import com.example.globalnews.network.NewsApi;
 import com.example.globalnews.network.NewsClient;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.List;
 
@@ -110,6 +113,7 @@ public class MainActivity extends AppCompatActivity{
     private void showArticles() {
         mRecyclerView.setVisibility(View.VISIBLE);
     }
+
 
 
 
