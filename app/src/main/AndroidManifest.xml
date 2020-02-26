@@ -15,7 +15,8 @@
             android:theme="@style/NoActionBarTheme">
 
         </activity>
-        <activity android:name=".ui.Login" />
+        <activity android:name=".ui.Login"
+            android:theme="@style/NoActionBarTheme"/>
         <activity android:name=".ui.CreateAccount" />
         <activity android:name=".News" />
         <activity
