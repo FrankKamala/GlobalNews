@@ -110,6 +110,9 @@ public class MainActivity extends AppCompatActivity{
     private void showArticles() {
         mRecyclerView.setVisibility(View.VISIBLE);
     }
+
+
+
 //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu){
 //
